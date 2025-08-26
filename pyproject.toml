@@ -1,0 +1,7 @@
+[project]
+name = "progra2"
+version = "0.1.0"
+description = "Ejercicios prácticos para la materia programación 2"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []

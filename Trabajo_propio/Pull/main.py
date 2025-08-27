@@ -13,6 +13,7 @@ def main():
     stats_display = StatisticsDisplay(weather_data)
     forecast_display = ForecastDisplay(weather_data)
 
+    # Flujo de cambio de estados en la estación meteorológica
     print("Weather Station 1.0")
     print("-------------------")
     weather_data.set_measurements(26.6, 65, 30.4)
@@ -23,7 +24,7 @@ def main():
     print("---")
     weather_data.set_measurements(25.5, 90, 29.2)
 
-    # Ejemplo de desregistro (opcional)
+    # Ejemplo de desregistro
     print("\n--- Forecast display unsubscribed ---")
     weather_data.remove_observer(forecast_display)
     weather_data.set_measurements(28.0, 88, 30.0)

@@ -1,6 +1,14 @@
+"""
+Clase que representa los datos meteorológicos enviados.
+"""
+
 from clases_base_abstractas import Subject, Observer
 
+
 class WeatherData(Subject):
+    """
+    Clase que controla los datos de la estación meteorológica.
+    """
     def __init__(self):
         self._observers = []
         self._temperature = 0.0
@@ -28,7 +36,6 @@ class WeatherData(Subject):
         self._pressure = pressure
         self.measurements_changed()
 
-    # Getters (opcional, para el modelo Pull)
     def get_temperature(self) -> float:
         return self._temperature
 

@@ -1,4 +1,4 @@
-# beverages.py
+ # beverages.py
 # Contiene el Componente y los Componentes Concretos del patrón.
 
 from abc import ABC, abstractmethod

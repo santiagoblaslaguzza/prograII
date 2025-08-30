@@ -31,7 +31,9 @@ def main():
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
 
     tests.test1()
+    tests.test2()    
+    tests.test3()
 
-    
+
 if __name__ == "__main__":
     main()

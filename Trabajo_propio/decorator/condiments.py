@@ -58,3 +58,14 @@ class Whip(CondimentDecorator):
 
     def cost(self) -> float:
         return self._beverage.cost() + 0.10
+
+
+class Caramel(CondimentDecorator):
+    """
+    Decorador para añadir Caramelo a una bebida.
+    """
+    def get_description(self) -> str:
+        return self._beverage.get_description() + ", Caramelo"
+
+    def cost(self) -> float:
+        return self._beverage.cost() + 0.20

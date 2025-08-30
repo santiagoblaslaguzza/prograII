@@ -49,8 +49,15 @@ class Soy(CondimentDecorator):
         return self._beverage.get_description() + ", Soja"
 
     def cost(self) -> float:
-        return self._beverage.cost() + 0.15
-
+    # costo Tall 0.10, Grande 0.15, Venti 0.20
+        costo = [0.1, 0.15 , 0.20]
+        if self.size == "Tall":
+            return self._beverage.cost() + costo[0]
+        elif self.size == "Grande":
+            return self._beverage.cost() + costo[1]
+        else:
+            return self._beverage.cost() + costo[2]      
+              
 class Whip(CondimentDecorator):
     """
     Decorador para añadir Crema a una bebida.

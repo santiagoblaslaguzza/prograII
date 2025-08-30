@@ -1,7 +1,7 @@
 # main.py
 # Script principal para probar el patrón Decorator.
 
-from beverages import Espresso, DarkRoast, HouseBlend
+from beverages import Espresso, DarkRoast, HouseBlend, Decaf
 from condiments import Mocha, Whip, Soy, Caramel
 import tests
 
@@ -25,14 +25,14 @@ def main():
 
     # Pedido 3: Un HouseBlend con Soja, Mocha y Crema.
     beverage3 = HouseBlend()
+    beverage3.set_size("Grande") #Se modifica el tamaño para que de el mismo valor que antes
     beverage3 = Soy(beverage3)
     beverage3 = Mocha(beverage3)
     beverage3 = Whip(beverage3)
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
 
-    tests.test1()
-    tests.test2()    
-    tests.test3()
+    tests.tests()
+
 
 
 if __name__ == "__main__":

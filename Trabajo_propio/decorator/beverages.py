@@ -24,7 +24,7 @@ class Beverage(ABC):
         if size in sizes:
             self.size = size
         else:
-            print("Tamaño erróneo, se asume Tall")
+            print("Tamaño ingresado erróneo, se asume Tall")
             
     def get_size(self) -> str:
         return self.size

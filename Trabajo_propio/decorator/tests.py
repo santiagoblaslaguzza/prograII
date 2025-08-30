@@ -1,6 +1,6 @@
 from beverages import Espresso, DarkRoast, HouseBlend,Decaf
 from condiments import Mocha, Whip, Soy, Caramel
-
+import main
 
 def test1():
     # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20).
@@ -119,6 +119,27 @@ def test9():
         print("Debería costar 1.99")
     print("-----------------")
 
+def test10():
+    #testeo builder sin condimentos
+    beverage4 = main.build_beverage(DarkRoast, "Venti")
+    print(f"Pedido build: {beverage4.get_description()} ${beverage4.cost():.2f}  Size: {beverage4.size}")
+    if round(beverage4.cost()  == 0.99,2):
+        print("Costo Correcto")
+    else:
+        print("Debería costar 0.99")
+    print("-----------------")
+
+
+def test11():
+    #testeo builder con condimentos
+    beverage = main.build_beverage(Decaf, "Venti",[Soy,Soy,Whip,Caramel])
+    print(f"Pedido build: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}")
+    if round(beverage.cost()  == 1.75,2):
+        print("Costo Correcto")
+    else:
+        print("Debería costar 1.75")
+    print("-----------------")
+    print("-----------------")
 
 def tests():
     test1()
@@ -130,3 +151,5 @@ def tests():
     test7()
     test8()
     test9()
+    test10()
+    test11()

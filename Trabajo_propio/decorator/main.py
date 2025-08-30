@@ -11,7 +11,7 @@ def main():
     """
     print("Bienvenido a Starbuzz Coffee!")
     print("--- Preparando pedidos ---")
-
+    
     # Pedido 1: Un Espresso simple, sin condimentos.
     beverage1 = Espresso()
     print(f"Pedido 1: {beverage1.get_description()} ${beverage1.cost():.2f}")
@@ -32,6 +32,14 @@ def main():
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
 
     tests.tests()
+
+def build_beverage(base, size="Tall", condiments =[]):
+        beverage_build = base()
+        beverage_build.set_size(size)
+        for i in condiments:
+            beverage_build =i(beverage_build)
+        return beverage_build
+    
 
 
 

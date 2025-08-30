@@ -13,6 +13,8 @@ class CondimentDecorator(Beverage, ABC):
     """
     def __init__(self, beverage: Beverage):
         self._beverage = beverage
+        self.size = beverage.get_size()
+
 
     @abstractmethod
     def get_description(self) -> str:

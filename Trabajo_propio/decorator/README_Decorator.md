@@ -55,7 +55,7 @@ Si pedimos **DarkRoast + Mocha + Mocha + Whip**, cuando invocamos `cost()` en el
 
 > Recomendación: resolver en **pequeños commits**, con **pruebas** por cada consigna.
 
-### Nivel 1 — Calentamiento
+### Nivel 1 — Calentamiento     ==>>> 1.1 HECHO     1.2 YA ESTABA EN EL PEDIDO 2
 1. **Nuevo condimento**: implementar `Caramel` (Caramelo) con un costo fijo (p. ej., `$0.20`).  
    - Actualizar `get_description()` y `cost()` como en `Mocha`.  
    - Demostrar en `main.py` un pedido con Caramelo.

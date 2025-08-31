@@ -4,6 +4,8 @@
 from beverages import Espresso, DarkRoast, HouseBlend, Decaf
 from condiments import Mocha, Whip, Soy, Caramel
 import tests
+from builder import build_beverage
+
 
 def main():
     """
@@ -11,7 +13,7 @@ def main():
     """
     print("Bienvenido a Starbuzz Coffee!")
     print("--- Preparando pedidos ---")
-    
+
     # Pedido 1: Un Espresso simple, sin condimentos.
     beverage1 = Espresso()
     print(f"Pedido 1: {beverage1.get_description()} ${beverage1.cost():.2f}")
@@ -20,27 +22,32 @@ def main():
     beverage2 = DarkRoast()
     beverage2 = Mocha(beverage2)  # Envolvemos con el primer Mocha
     beverage2 = Mocha(beverage2)  # Envolvemos con el segundo Mocha
-    beverage2 = Whip(beverage2)   # Envolvemos con Crema
+    beverage2 = Whip(beverage2)  # Envolvemos con Crema
     print(f"Pedido 2: {beverage2.get_description()} ${beverage2.cost():.2f}")
 
     # Pedido 3: Un HouseBlend con Soja, Mocha y Crema.
     beverage3 = HouseBlend()
-    beverage3.set_size("Grande") #Se modifica el tamaño para que de el mismo valor que antes
+    beverage3.set_size(
+        "Grande"
+    )  # Se modifica el tamaño para que de el mismo valor que antes
     beverage3 = Soy(beverage3)
     beverage3 = Mocha(beverage3)
     beverage3 = Whip(beverage3)
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
 
-    tests.tests()
+    # Pedido 4: Un Decaf con Soja y Mocha.
+    beverage4 = build_beverage("decaf", "Grande", ["soy", "mocha"])
+    print(f"Pedido 4: {beverage4.get_description()} ${beverage4.cost():.2f}")
 
-def build_beverage(base, size="Tall", condiments =[]):
-        beverage_build = base()
-        beverage_build.set_size(size)
-        for i in condiments:
-            beverage_build =i(beverage_build)
-        return beverage_build
-    
+    # tests.tests()
 
+
+# def build_beverage(base, size="Tall", condiments =[]):
+#         beverage_build = base()
+#         beverage_build.set_size(size)
+#         for i in condiments:
+#             beverage_build =i(beverage_build)
+#         return beverage_build
 
 
 if __name__ == "__main__":

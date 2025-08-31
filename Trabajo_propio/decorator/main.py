@@ -39,7 +39,7 @@ def main():
     beverage4 = build_beverage("decaf", "Grande", ["soy", "mocha"])
     print(f"Pedido 4: {beverage4.get_description()} ${beverage4.cost():.2f}")
 
-    # tests.tests()
+    tests.tests()
 
 
 # def build_beverage(base, size="Tall", condiments =[]):

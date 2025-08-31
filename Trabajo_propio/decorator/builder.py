@@ -1,6 +1,6 @@
 from typing import List, Optional
 from beverages import Beverage, Espresso, DarkRoast, HouseBlend, Decaf
-from condiments import Milk, Mocha, Soy, Whip
+from condiments import Milk, Mocha, Soy, Whip, Caramel
 
 
 class BeverageBuilder:
@@ -11,7 +11,13 @@ class BeverageBuilder:
         "decaf": Decaf,
     }
 
-    CONDIMENTS = {"milk": Milk, "mocha": Mocha, "soy": Soy, "whip": Whip}
+    CONDIMENTS = {
+        "milk": Milk,
+        "mocha": Mocha,
+        "soy": Soy,
+        "whip": Whip,
+        "caramel": Caramel,
+    }
 
     SIZES = {"Tall", "Grande", "Venti"}
 

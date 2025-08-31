@@ -1,9 +1,11 @@
 from beverages import Espresso, DarkRoast, HouseBlend, Decaf
 from condiments import Mocha, Whip, Soy, Caramel
-import main
+from builder import build_beverage
+
 
 
 def test1():
+    # Nivel 1 
     # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20).
     beverage_T1 = Espresso()
     beverage_T1 = Mocha(beverage_T1)  # Envolvemos con el primer Mocha
@@ -16,6 +18,18 @@ def test1():
         print("Debería costar 2.19")
     print("-----------------")
 
+    # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20) y Crema (0.10).
+    beverage_T1 = Espresso()
+    beverage_T1 = Mocha(beverage_T1)  # Envolvemos con el primer Mocha
+    beverage_T1 = Whip(beverage_T1)  # Envolvemos con el primer Mocha
+    print(
+        f"Test 1: {beverage_T1.get_description()} ${beverage_T1.cost():.2f} Size: {beverage_T1.size}"
+    )
+    if beverage_T1.cost() == 2.29:
+        print("Cálculo correcto de costo")
+    else:
+        print("Debería costar 2.29")
+    print("-----------------")
 
 def test2():
     # testeo en el Espresso simple (1.99), con caramelo (0.20), cambio de tamaño.
@@ -55,7 +69,7 @@ def test4():
     print(
         f"Test 4: {beverage_T4.get_description()} ${beverage_T4.cost():.2f} Size: {beverage_T4.size}"
     )
-    if round(beverage_T4.cost() == 0.99, 2):
+    if round(beverage_T4.cost(), 2) == 0.99:
         print("Costo Correcto")
     else:
         print("Debería costar 0.99")
@@ -63,18 +77,20 @@ def test4():
 
 
 def test5():
-    # testeo en el HouseBlend  (0.89), tamaño Tall con soja x2(0.10x2).
+    # testeo en el HouseBlend  (0.89), tamaño Tall con soja x3(0.10x3).
     beverage_T5 = HouseBlend()
     beverage_T5.set_size("Tall")
     beverage_T5 = Soy(beverage_T5)  # Envolvemos con Soja
     beverage_T5 = Soy(beverage_T5)  # Envolvemos con Soja
+    beverage_T5 = Soy(beverage_T5)  # Envolvemos con Soja
+
     print(
         f"Test 5: {beverage_T5.get_description()} ${beverage_T5.cost():.2f} Size: {beverage_T5.size}"
     )
-    if round(beverage_T5.cost() == 1.09, 2):
+    if round(beverage_T5.cost(), 2) == 1.19:
         print("Costo Correcto")
     else:
-        print("Debería costar 1.09")
+        print("Debería costar 1.19")
     print("-----------------")
 
 
@@ -87,7 +103,7 @@ def test6():
     print(
         f"Test 6: {beverage_T6.get_description()} ${beverage_T6.cost():.2f} Size: {beverage_T6.size}"
     )
-    if round(beverage_T6.cost() == 1.19, 2):
+    if round(beverage_T6.cost(), 2) == 1.19:
         print("Costo Correcto")
     else:
         print("Debería costar 1.19")
@@ -103,7 +119,7 @@ def test7():
     print(
         f"Test 7: {beverage_T7.get_description()} ${beverage_T7.cost():.2f} Size: {beverage_T7.size}"
     )
-    if round(beverage_T7.cost() == 1.29, 2):
+    if round(beverage_T7.cost() , 2) == 1.29:
         print("Costo Correcto")
     else:
         print("Debería costar 1.29")
@@ -121,7 +137,7 @@ def test8():
     print(
         f"Test 8: {beverage_T8.get_description()} ${beverage_T8.cost():.2f} Size: {beverage_T8.size}"
     )
-    if round(beverage_T8.cost() == 1.75, 2):
+    if round(beverage_T8.cost(), 2) == 1.75:
         print("Costo Correcto")
     else:
         print("Debería costar 1.75")
@@ -136,7 +152,7 @@ def test9():
     print(
         f"Test 9: {beverage_T9.get_description()} ${beverage_T9.cost():.2f} Size: {beverage_T9.size}"
     )
-    if round(beverage_T9.cost() == 1.99, 2):
+    if round(beverage_T9.cost(), 2) == 1.99:
         print("Costo Correcto")
     else:
         print("Debería costar 1.99")
@@ -145,11 +161,11 @@ def test9():
 
 def test10():
     # testeo builder sin condimentos
-    beverage4 = main.build_beverage("darkroast", "Venti", [])
+    beverage4 = build_beverage("darkroast", "Venti", [])
     print(
-        f"Pedido build: {beverage4.get_description()} ${beverage4.cost():.2f}  Size: {beverage4.size}"
+        f"Pedido build 10 : {beverage4.get_description()} ${beverage4.cost():.2f}  Size: {beverage4.size}"
     )
-    if round(beverage4.cost() == 0.99, 2):
+    if round(beverage4.cost() , 2)== 0.99:
         print("Costo Correcto")
     else:
         print("Debería costar 0.99")
@@ -158,11 +174,11 @@ def test10():
 
 def test11():
     # testeo builder con condimentos
-    beverage = main.build_beverage("decaf", "Venti", ["soy", "soy", "whip", "caramel"])
+    beverage = build_beverage("decaf", "Venti", ["soy", "soy", "whip", "caramel"])
     print(
-        f"Pedido build: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
+        f"Pedido build 11: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
     )
-    if round(beverage.cost() == 1.75, 2):
+    if round(beverage.cost(), 2) == 1.75:
         print("Costo Correcto")
     else:
         print("Debería costar 1.75")

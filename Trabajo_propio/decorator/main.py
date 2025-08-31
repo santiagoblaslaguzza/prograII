@@ -41,14 +41,5 @@ def main():
 
     tests.tests()
 
-
-# def build_beverage(base, size="Tall", condiments =[]):
-#         beverage_build = base()
-#         beverage_build.set_size(size)
-#         for i in condiments:
-#             beverage_build =i(beverage_build)
-#         return beverage_build
-
-
 if __name__ == "__main__":
     main()

@@ -15,24 +15,17 @@ def main():
     print("--- Preparando pedidos ---")
 
     # Pedido 1: Un Espresso simple, sin condimentos.
-    beverage1 = Espresso()
+    beverage1 = build_beverage("espresso")
     print(f"Pedido 1: {beverage1.get_description()} ${beverage1.cost():.2f}")
 
     # Pedido 2: Un DarkRoast con doble Mocha y Crema.
-    beverage2 = DarkRoast()
-    beverage2 = Mocha(beverage2)  # Envolvemos con el primer Mocha
-    beverage2 = Mocha(beverage2)  # Envolvemos con el segundo Mocha
-    beverage2 = Whip(beverage2)  # Envolvemos con Crema
+    beverage2 = build_beverage("darkroast", condiments=["mocha", "mocha", "whip"])
     print(f"Pedido 2: {beverage2.get_description()} ${beverage2.cost():.2f}")
 
     # Pedido 3: Un HouseBlend con Soja, Mocha y Crema.
-    beverage3 = HouseBlend()
-    beverage3.set_size(
-        "Grande"
-    )  # Se modifica el tamaño para que de el mismo valor que antes
-    beverage3 = Soy(beverage3)
-    beverage3 = Mocha(beverage3)
-    beverage3 = Whip(beverage3)
+    beverage3 = build_beverage(
+        "houseblend", size="Grande", condiments=["soy", "mocha", "whip"]
+    )
     print(f"Pedido 3: {beverage3.get_description()} ${beverage3.cost():.2f}")
 
     # Pedido 4: Un Decaf con Soja y Mocha.
@@ -40,6 +33,7 @@ def main():
     print(f"Pedido 4: {beverage4.get_description()} ${beverage4.cost():.2f}")
 
     tests.tests()
+
 
 if __name__ == "__main__":
     main()

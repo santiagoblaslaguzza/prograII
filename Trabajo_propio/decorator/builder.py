@@ -21,14 +21,15 @@ class BeverageBuilder:
 
     SIZES = {"Tall", "Grande", "Venti"}
 
-    def __init__(self, beverage: str, size: str) -> Beverage:
+    def __init__(self, beverage: str, size: Optional[str]) -> Beverage:
         if beverage not in self.BEVERAGES:
             raise ValueError(f"Esa bebida: {beverage} no existe.")
         self.beverage = self.BEVERAGES[beverage]()
 
-        if size not in self.SIZES:
-            raise ValueError(f"Ese tamaño: {size} no existe.")
-        self.beverage.set_size(size)
+        if size:
+            if size not in self.SIZES:
+                raise ValueError(f"Ese tamaño: {size} no existe.")
+            self.beverage.set_size(size)
 
     def add_condiment(self, condiment: str):
         if condiment not in self.CONDIMENTS:
@@ -46,7 +47,9 @@ class BeverageBuilder:
         return self.beverage
 
 
-def build_beverage(base: str, size: str, condiments: Optional[List[str]]) -> Beverage:
+def build_beverage(
+    base: str, size: Optional[str] = "Tall", condiments: Optional[List[str]] = []
+) -> Beverage:
     builder = BeverageBuilder(base, size)
     if condiments:
         builder.add_condiments(condiments)

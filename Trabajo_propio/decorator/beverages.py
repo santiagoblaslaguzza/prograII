@@ -3,12 +3,14 @@
 
 from abc import ABC, abstractmethod
 
+
 # --- Componente Abstracto ---
 class Beverage(ABC):
     """
     La clase base para todas las bebidas. Utiliza el módulo abc para
     definir que es una clase abstracta.
     """
+
     def __init__(self):
         self.description = "Bebida Desconocida"
         self.size = "Tall"
@@ -19,13 +21,13 @@ class Beverage(ABC):
         """
         return self.description
 
-    def set_size(self, size) -> str:
-        sizes= ["Tall", "Grande", "Venti"]
+    def set_size(self, size) -> str | None:
+        sizes = ["Tall", "Grande", "Venti"]
         if size in sizes:
             self.size = size
         else:
             print("Tamaño ingresado erróneo, se asume Tall")
-            
+
     def get_size(self) -> str:
         return self.size
 
@@ -37,11 +39,13 @@ class Beverage(ABC):
         """
         pass
 
+
 # --- Componentes Concretos ---
 class HouseBlend(Beverage):
     """
     Café de la casa, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.description = "Café de la Casa"
         self.size = "Tall"
@@ -49,10 +53,12 @@ class HouseBlend(Beverage):
     def cost(self) -> float:
         return 0.89
 
+
 class DarkRoast(Beverage):
     """
     Café Dark Roast, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.description = "Café Dark Roast"
         self.size = "Tall"
@@ -60,10 +66,12 @@ class DarkRoast(Beverage):
     def cost(self) -> float:
         return 0.99
 
+
 class Decaf(Beverage):
     """
     Café Descafeinado, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.description = "Café Descafeinado"
         self.size = "Tall"
@@ -71,10 +79,12 @@ class Decaf(Beverage):
     def cost(self) -> float:
         return 1.05
 
+
 class Espresso(Beverage):
     """
     Café Espresso, un tipo específico de bebida.
     """
+
     def __init__(self):
         self.description = "Espresso"
         self.size = "Tall"

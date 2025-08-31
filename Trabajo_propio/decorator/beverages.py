@@ -1,0 +1,93 @@
+# beverages.py
+# Contiene el Componente y los Componentes Concretos del patrón.
+
+from abc import ABC, abstractmethod
+
+
+# --- Componente Abstracto ---
+class Beverage(ABC):
+    """
+    La clase base para todas las bebidas. Utiliza el módulo abc para
+    definir que es una clase abstracta.
+    """
+
+    def __init__(self):
+        self.description = "Bebida Desconocida"
+        self.size = "Tall"
+
+    def get_description(self) -> str:
+        """
+        Devuelve la descripción de la bebida.
+        """
+        return self.description
+
+    def set_size(self, size) -> str | None:
+        sizes = ["Tall", "Grande", "Venti"]
+        if size in sizes:
+            self.size = size
+        else:
+            print("Tamaño ingresado erróneo, se asume Tall")
+
+    def get_size(self) -> str:
+        return self.size
+
+    @abstractmethod
+    def cost(self) -> float:
+        """
+        Método abstracto que las subclases deben implementar para devolver
+        el costo de la bebida.
+        """
+        pass
+
+
+# --- Componentes Concretos ---
+class HouseBlend(Beverage):
+    """
+    Café de la casa, un tipo específico de bebida.
+    """
+
+    def __init__(self):
+        self.description = "Café de la Casa"
+        self.size = "Tall"
+
+    def cost(self) -> float:
+        return 0.89
+
+
+class DarkRoast(Beverage):
+    """
+    Café Dark Roast, un tipo específico de bebida.
+    """
+
+    def __init__(self):
+        self.description = "Café Dark Roast"
+        self.size = "Tall"
+
+    def cost(self) -> float:
+        return 0.99
+
+
+class Decaf(Beverage):
+    """
+    Café Descafeinado, un tipo específico de bebida.
+    """
+
+    def __init__(self):
+        self.description = "Café Descafeinado"
+        self.size = "Tall"
+
+    def cost(self) -> float:
+        return 1.05
+
+
+class Espresso(Beverage):
+    """
+    Café Espresso, un tipo específico de bebida.
+    """
+
+    def __init__(self):
+        self.description = "Espresso"
+        self.size = "Tall"
+
+    def cost(self) -> float:
+        return 1.99

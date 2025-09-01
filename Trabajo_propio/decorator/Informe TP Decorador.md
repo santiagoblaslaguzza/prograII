@@ -88,12 +88,12 @@ Se modifica el metodo cost() del decorador Soy.
 ### Nivel 3 — Usabilidad y pruebas
 1. **Builder/Factory simple (opcional)**: para no escribir a mano todas las “envolturas”, crear una función tipo `build_beverage(base, size, condiments)` que devuelva el objeto ya decorado.  
 
-
+   Se generó el archivo builder.py, toma como opcionales tamaño (el default sigue siendo Tall) y condimentos 
 
 2. **Pretty print (opcional)**: un decorador “de presentación” que transforme `"Mocha, Mocha, Whip"` en `"Double Mocha, Whip"` **solo a nivel de texto** (no cambies la lógica de `cost()`).
 
 
-
+   Se generó méthodo pretty_print en beverages y condiments, en los test se agregó la impresión decorada para evaluar la funcionalidad
 
 
 3. **Testing**: escribir tests (con `pytest` o asserts) para validar costos y descripciones de 3–5 combos (incluyendo **dobles** y **tamaños**).

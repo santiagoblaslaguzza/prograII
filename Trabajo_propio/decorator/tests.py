@@ -174,7 +174,7 @@ def test9():
 
 def test10():
     # testeo builder sin condimentos
-    beverage4 = build_beverage("DarkRoast", "Venti", [])
+    beverage4 = build_beverage("DarkRoast", )
     print(
         f"Pedido build 10 : {beverage4.get_description()} ${beverage4.cost():.2f}  Size: {beverage4.size}"
     )
@@ -192,14 +192,18 @@ def test11():
     print(
         f"Pedido build 11: {beverage.get_description()}      ${beverage.cost():.2f}  Size: {beverage.size}"
     )
-    
-    if round(beverage.cost(), 2) == 1.75:
+    assert round(beverage.cost(), 2) == 1.75
+    assert beverage.pretty_print() == "Café Descafeinado, Double  Soja,  Crema,  Caramelo"
+    #assert beverage.pretty_print() == "Café Descafeinado, Double  Soja,  Crema,  Caramelo  "
+    """     if round(beverage.cost(), 2) == 1.75:
         print("Costo Correcto")
     else:
         print("Debería costar 1.75")
-    print(f"Impresión decorada: {beverage.pretty_print()}")    
+    print(f"Impresión decorada: {beverage.pretty_print()}")     """
+
+
     print("-----------------")
-    print("-----------------")
+
 
 
 def tests():

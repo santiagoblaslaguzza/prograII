@@ -5,12 +5,13 @@ from condiments import * #Milk, Mocha, Soy, Whip, Caramel
 
 class BeverageBuilder:
 
- #   BEVERAGES = {
- #       "espresso": Espresso,
- #       "darkroast": DarkRoast,
- #       "houseblend": HouseBlend,
- #       "decaf": Decaf,
- #    }
+    """     BEVERAGES = {
+        "espresso": Espresso,
+        "darkroast": DarkRoast,
+        "houseblend": HouseBlend,
+        "decaf": Decaf,
+     } """
+    
     bebidas = Beverage.__subclasses__()
     BEVERAGES = dict(zip([cls.__name__ for cls in bebidas],bebidas))
 
@@ -29,13 +30,9 @@ class BeverageBuilder:
     SIZES = {"Tall", "Grande", "Venti"}
 
     def __init__(self, beverage: str, size: Optional[str]) -> Beverage:
-       
-
-
         if beverage not in self.BEVERAGES:
             raise ValueError(f"Esa bebida: {beverage} no existe.")
         self.beverage = self.BEVERAGES[beverage]()
-
         if size:
             if size not in self.SIZES:
                 raise ValueError(f"Ese tamaño: {size} no existe.")

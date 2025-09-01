@@ -8,7 +8,7 @@ def test1():
     # Nivel 1 
     # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20).
     beverage_T1 = Espresso()
-    beverage_T1 = Mocha(beverage_T1)  # Envolvemos con el primer Mocha
+    beverage_T1 = Caramel(beverage_T1)  # Envolvemos con el primer Caramelo
     print(
         f"Test 1: {beverage_T1.get_description()} ${beverage_T1.cost():.2f} Size: {beverage_T1.size}"
     )
@@ -21,7 +21,7 @@ def test1():
 
     # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20) y Crema (0.10).
     beverage_T1 = Espresso()
-    beverage_T1 = Mocha(beverage_T1)  # Envolvemos con el primer Mocha
+    beverage_T1 = Caramel(beverage_T1)  # Envolvemos con el primer Caramel
     beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
     beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
     beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip

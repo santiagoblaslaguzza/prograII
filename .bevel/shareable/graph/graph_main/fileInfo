@@ -1,0 +1,144 @@
+{
+  "fileInfos" : [ {
+    "path" : "Trabajo_propio\\Pull\\Subject.py",
+    "modificationInfo" : {
+      "contentHash" : 1718825423,
+      "lastModified" : 1756554139943
+    },
+    "linesOfCode" : 46
+  }, {
+    "path" : "Trabajo_propio\\Pull\\clases_base_abstractas.py",
+    "modificationInfo" : {
+      "contentHash" : -1904390333,
+      "lastModified" : 1756554139943
+    },
+    "linesOfCode" : 42
+  }, {
+    "path" : "Trabajo_propio\\Pull\\displays.py",
+    "modificationInfo" : {
+      "contentHash" : -402665213,
+      "lastModified" : 1756554139956
+    },
+    "linesOfCode" : 80
+  }, {
+    "path" : "Trabajo_propio\\Pull\\main.py",
+    "modificationInfo" : {
+      "contentHash" : 422487940,
+      "lastModified" : 1756554139957
+    },
+    "linesOfCode" : 34
+  }, {
+    "path" : "Trabajo_propio\\Push\\Subject_push.py",
+    "modificationInfo" : {
+      "contentHash" : -122649478,
+      "lastModified" : 1756554139957
+    },
+    "linesOfCode" : 39
+  }, {
+    "path" : "Trabajo_propio\\Push\\clases_base_abstractas_push.py",
+    "modificationInfo" : {
+      "contentHash" : 2110309152,
+      "lastModified" : 1756554139958
+    },
+    "linesOfCode" : 24
+  }, {
+    "path" : "Trabajo_propio\\Push\\displays_push.py",
+    "modificationInfo" : {
+      "contentHash" : 1508594172,
+      "lastModified" : 1756554139959
+    },
+    "linesOfCode" : 60
+  }, {
+    "path" : "Trabajo_propio\\Push\\main.py",
+    "modificationInfo" : {
+      "contentHash" : 1592778762,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 26
+  }, {
+    "path" : "Trabajo_propio\\decorator\\beverages.py",
+    "modificationInfo" : {
+      "contentHash" : -773670350,
+      "lastModified" : 1756680769090
+    },
+    "linesOfCode" : 93
+  }, {
+    "path" : "Trabajo_propio\\decorator\\builder.py",
+    "modificationInfo" : {
+      "contentHash" : -630195392,
+      "lastModified" : 1756691694379
+    },
+    "linesOfCode" : 67
+  }, {
+    "path" : "Trabajo_propio\\decorator\\condiments.py",
+    "modificationInfo" : {
+      "contentHash" : 461405687,
+      "lastModified" : 1756680769090
+    },
+    "linesOfCode" : 80
+  }, {
+    "path" : "Trabajo_propio\\decorator\\main.py",
+    "modificationInfo" : {
+      "contentHash" : -18166435,
+      "lastModified" : 1756691791210
+    },
+    "linesOfCode" : 40
+  }, {
+    "path" : "Trabajo_propio\\decorator\\tests.py",
+    "modificationInfo" : {
+      "contentHash" : -1809595579,
+      "lastModified" : 1756691896780
+    },
+    "linesOfCode" : 200
+  }, {
+    "path" : "decorator\\beverages.py",
+    "modificationInfo" : {
+      "contentHash" : -1974679891,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 68
+  }, {
+    "path" : "decorator\\condiments.py",
+    "modificationInfo" : {
+      "contentHash" : 1987189149,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 60
+  }, {
+    "path" : "decorator\\main.py",
+    "modificationInfo" : {
+      "contentHash" : -2125903239,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 33
+  }, {
+    "path" : "observer\\Subject.py",
+    "modificationInfo" : {
+      "contentHash" : 351300964,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 37
+  }, {
+    "path" : "observer\\clases_base_abstractas.py",
+    "modificationInfo" : {
+      "contentHash" : 2110309152,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 24
+  }, {
+    "path" : "observer\\displays.py",
+    "modificationInfo" : {
+      "contentHash" : -519875511,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 57
+  }, {
+    "path" : "observer\\main.py",
+    "modificationInfo" : {
+      "contentHash" : 488790544,
+      "lastModified" : 1756554139960
+    },
+    "linesOfCode" : 23
+  } ],
+  "appVersion" : "1.3.0"
+}

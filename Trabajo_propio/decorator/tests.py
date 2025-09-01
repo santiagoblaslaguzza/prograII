@@ -161,7 +161,7 @@ def test9():
 
 def test10():
     # testeo builder sin condimentos
-    beverage4 = build_beverage("darkroast", "Venti", [])
+    beverage4 = build_beverage("DarkRoast", "Venti", [])
     print(
         f"Pedido build 10 : {beverage4.get_description()} ${beverage4.cost():.2f}  Size: {beverage4.size}"
     )
@@ -174,7 +174,7 @@ def test10():
 
 def test11():
     # testeo builder con condimentos
-    beverage = build_beverage("decaf", "Venti", ["soy", "soy", "whip", "caramel"])
+    beverage = build_beverage("Decaf", "Venti", ["Soy", "Soy", "Whip", "Caramel"])
     print(
         f"Pedido build 11: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
     )

@@ -1,27 +1,37 @@
-from typing import List, Optional
-from beverages import Beverage, Espresso, DarkRoast, HouseBlend, Decaf
-from condiments import Milk, Mocha, Soy, Whip, Caramel
+from typing import List, Optional 
+from beverages import * #Beverage, Espresso, DarkRoast, HouseBlend, Decaf
+from condiments import * #Milk, Mocha, Soy, Whip, Caramel
 
 
 class BeverageBuilder:
-    BEVERAGES = {
-        "espresso": Espresso,
-        "darkroast": DarkRoast,
-        "houseblend": HouseBlend,
-        "decaf": Decaf,
-    }
 
+ #   BEVERAGES = {
+ #       "espresso": Espresso,
+ #       "darkroast": DarkRoast,
+ #       "houseblend": HouseBlend,
+ #       "decaf": Decaf,
+ #    }
+    bebidas = Beverage.__subclasses__()
+    BEVERAGES = dict(zip([cls.__name__ for cls in bebidas],bebidas))
+
+    """     
     CONDIMENTS = {
         "milk": Milk,
         "mocha": Mocha,
         "soy": Soy,
         "whip": Whip,
         "caramel": Caramel,
-    }
+    } 
+    """
+    condimentos = CondimentDecorator.__subclasses__()
+    CONDIMENTS = dict(zip([cls.__name__ for cls in condimentos],condimentos))
 
     SIZES = {"Tall", "Grande", "Venti"}
 
     def __init__(self, beverage: str, size: Optional[str]) -> Beverage:
+       
+
+
         if beverage not in self.BEVERAGES:
             raise ValueError(f"Esa bebida: {beverage} no existe.")
         self.beverage = self.BEVERAGES[beverage]()

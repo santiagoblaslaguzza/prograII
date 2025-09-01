@@ -33,3 +33,4 @@ share/python-wheels/
 *.egg
 MANIFEST
 uv.lock
+.bevel/do_not_share

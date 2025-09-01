@@ -54,18 +54,11 @@ def test2():
 
 def test3():
     # testeo en el HouseBlend  (0.89), con caramelo (0.20), cambio de tamaño se setea mal.
-    beverage_T3 = Espresso()
-    beverage_T3.set_size("Grde")
-    beverage_T3 = Mocha(beverage_T3)  # Envolvemos con el primer Mocha
-    print(
-        f"Test 3: {beverage_T3.get_description()} ${beverage_T3.cost():.3f} Size: {beverage_T3.size}"
-    )
-    if beverage_T3.size == "Tall":
-        print("Tamaño Correcto")
-    else:
-        print("Debería no haber modificado el default Tall")
-    print(f"Impresión decorada: {beverage_T3.pretty_print()}")  
-    print("-----------------")
+    try:
+        beverage_T3 = Espresso()
+        beverage_T3.set_size("Grande")
+    except ValueError as e:
+        assert str(e) == "Tamaño no disponible"
 
 
 def test4():

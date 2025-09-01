@@ -183,6 +183,21 @@ def test11():
     else:
         print("Debería costar 1.75")
     print("-----------------")
+    
+def test12():
+    # testeo builder con condimentos
+    try:
+        beverage = build_beverage("decafEE", "Venti", ["soy", "soy", "whip", "caramel"])
+        print(
+            f"Pedido build 11: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
+        )
+        if round(beverage.cost(), 2) == 1.75:
+            print("Costo Correcto")
+        else:
+            print("Debería costar 1.75")
+    except ValueError as e:
+        assert str(e) == "Esa bebida: decafEE no existe."
+    print("-----------------")
     print("-----------------")
 
 
@@ -198,3 +213,4 @@ def tests():
     test9()
     test10()
     test11()
+    test12()

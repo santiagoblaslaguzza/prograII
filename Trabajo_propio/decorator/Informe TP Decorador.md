@@ -50,7 +50,7 @@ Bienvenido a Starbuzz Coffee!
 
    Se agregaron los métodos. Se considera que si hay un ingreso erróneo del tamaño se toma el default 'Tall", y en la clase abstracta de 'CondimentDecorator' se agregó en el init "self.size = beverage.get_size()" para que al ir decorando la bebida mantenga el estado de tamaño.
    En los tests 2 y 3 se verifica que aún con condimentos reconoce el tamaño seteado
-
+   ```
       def set_size(self, size) -> str:
          sizes= ["Tall", "Grande", "Venti"]
          if size in sizes:
@@ -70,12 +70,13 @@ Bienvenido a Starbuzz Coffee!
       def __init__(self, beverage: Beverage):
          self._beverage = beverage
          self.size = beverage.get_size()
+   ```
       
 
 2. Hacer que **al menos** `Soy` cobre según tamaño (p. ej., Tall 0.10, Grande 0.15, Venti 0.20) y leer el `size` del componente envuelto.  
 
    Se modifica el metodo cost() del decorador Soy. 
-
+   ```
       def cost(self) -> float:
          # costo Tall 0.10, Grande 0.15, Venti 0.20
          costo = [0.10, 0.15 , 0.20]
@@ -85,7 +86,7 @@ Bienvenido a Starbuzz Coffee!
                return self._beverage.cost() + costo[1]
          else:
                return self._beverage.cost() + costo[2]      
-
+   ```
 
 3. Validar con 2–3 ejemplos reales: *HouseBlend Venti + Soy*, etc.  
    > Pista: los decoradores deben **propagar** o **consultar** el tamaño del beverage envuelto; no dupliques estado.

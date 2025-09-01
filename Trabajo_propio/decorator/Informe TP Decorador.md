@@ -76,7 +76,7 @@ Bienvenido a Starbuzz Coffee!
    Se modifica el metodo cost() del decorador Soy. 
 
       def cost(self) -> float:
-      # costo Tall 0.10, Grande 0.15, Venti 0.20
+         # costo Tall 0.10, Grande 0.15, Venti 0.20
          costo = [0.10, 0.15 , 0.20]
          if self.size == "Tall":
                return self._beverage.cost() + costo[0]

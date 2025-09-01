@@ -198,7 +198,6 @@ def test12():
     except ValueError as e:
         assert str(e) == "Esa bebida: decafEE no existe."
     print("-----------------")
-    print("-----------------")
 
 
 def tests():

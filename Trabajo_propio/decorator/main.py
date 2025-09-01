@@ -21,7 +21,6 @@ def main():
     # Pedido 2: Un DarkRoast con doble Mocha y Crema.
     beverage2 = build_beverage("DarkRoast", condiments=["Mocha", "Mocha", "Whip"])
     print(f"Pedido 2: {beverage2.get_description()} ${beverage2.cost():.2f}")
-    print(f"Pretty print: {beverage2.pretty_print()}")
 
     # Pedido 3: Un HouseBlend con Soja, Mocha y Crema.
     beverage3 = build_beverage(

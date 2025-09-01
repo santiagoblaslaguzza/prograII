@@ -16,9 +16,9 @@ class Beverage(ABC):
         self.size = "Tall"
 
     def pretty_print(self)-> str:
-        lista = self.get_description().split(",")
-        texto = lista[0]
-        return texto
+#        lista = self.get_description().split(",")
+#       texto = lista[0]
+        return self.description
 
     def get_description(self) -> str:
         """

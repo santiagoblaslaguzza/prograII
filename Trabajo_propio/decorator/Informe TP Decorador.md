@@ -22,16 +22,17 @@ Bienvenido a Starbuzz Coffee!
 - Demostrar en `main.py` un pedido con Caramelo.
 
    En condiments.py se sumo el "Condimento Concreto" Caramel
+   ```
    class Caramel(CondimentDecorator):
    """
-               Decorador para añadir Caramelo a una bebida.
-               """
+      Decorador para añadir Caramelo a una bebida.
+   """
    def get_description(self) -> str:
    return self._beverage.get_description() + ", Caramelo"
 
    def cost(self) -> float:
    return self._beverage.cost() + 0.20
-
+   ```
    Se agregó un archivo tests.py para agregar los testeos de las nuevas implementaciones, el Test1 muestra una expreso + caramel  y un expreso + caramel + whip, para verificar que tanto su uso solo como en combinación con otros condimentos es incorporado correctamente
 
 
@@ -75,14 +76,15 @@ Bienvenido a Starbuzz Coffee!
 
    Se modifica el metodo cost() del decorador Soy. 
 
-   def cost(self) -> float:
-      costo = [0.10, 0.15 , 0.20]
-      if self.size == "Tall":
-            return self._beverage.cost() + costo[0]
-      elif self.size == "Grande":
-            return self._beverage.cost() + costo[1]
-      else:
-            return self._beverage.cost() + costo[2]      
+      def cost(self) -> float:
+         # costo Tall 0.10, Grande 0.15, Venti 0.20
+         costo = [0.10, 0.15 , 0.20]
+         if self.size == "Tall":
+               return self._beverage.cost() + costo[0]
+         elif self.size == "Grande":
+               return self._beverage.cost() + costo[1]
+         else:
+               return self._beverage.cost() + costo[2]      
 
 
 3. Validar con 2–3 ejemplos reales: *HouseBlend Venti + Soy*, etc.  

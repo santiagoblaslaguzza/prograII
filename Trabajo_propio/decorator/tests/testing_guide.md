@@ -5,7 +5,7 @@
 * Asegurate de haber inicializado un entorno virtual usando pip o el controlador 
 de dependencias de tu preferencia
 
-* Luego usando el controlador de dependencias puedes ejecutar el comando pip install -r requierements.txt, 
+* Luego usando el controlador de dependencias puedes ejecutar el comando pip install -r requirements.txt, 
 ahí estará pytest con la versión usada para escribir los tests
 
 * Ya con pytest cambia de directorio hasta Trabajo_propio/decorator, de esa forma pytest podrá ubicar

@@ -18,8 +18,6 @@ class Beverage(ABC):
 
 
     def pretty_print(self)-> str:
-#        lista = self.get_description().split(",")
-#       texto = lista[0]
         return self.description
 
     def get_description(self) -> str:

@@ -11,9 +11,11 @@ class Beverage(ABC):
     definir que es una clase abstracta.
     """
 
-    def __init__(self):
-        self.description = "Bebida Desconocida"
-        self.size = "Tall"
+    def __init__(self, description: str, size: str):
+        self.sizes = ["Tall", "Grande", "Venti"]
+        self.description = description
+        self.size = size
+
 
     def pretty_print(self)-> str:
 #        lista = self.get_description().split(",")
@@ -26,15 +28,29 @@ class Beverage(ABC):
         """
         return self.description
 
-    def set_size(self, size) -> str | None:
-        sizes = ["Tall", "Grande", "Venti"]
-        if size in sizes:
-            self.size = size
-        else:
-            print("Tamaño ingresado erróneo, se asume Tall")
+
+    def set_size(self, size) -> None:
+        """
+        Establece el tamaño de la bebida.
+        """
+        if size not in self.get_available_sizes():
+            raise ValueError("Tamaño no disponible")
+        self.size = size
+
 
     def get_size(self) -> str:
+        """
+        Devuelve el tamaño de la bebida.
+        """
         return self.size
+
+
+    def get_available_sizes(self) -> list[str]:
+        """
+        Devuelve una lista de los tamaños disponibles para la bebida.
+        """
+        return self.sizes
+
 
     @abstractmethod
     def cost(self) -> float:
@@ -52,8 +68,7 @@ class HouseBlend(Beverage):
     """
 
     def __init__(self):
-        self.description = "Café de la Casa"
-        self.size = "Tall"
+        super().__init__("Café de la Casa", "Tall")
 
     def cost(self) -> float:
         return 0.89
@@ -65,8 +80,7 @@ class DarkRoast(Beverage):
     """
 
     def __init__(self):
-        self.description = "Café Dark Roast"
-        self.size = "Tall"
+        super().__init__("Café Dark Roast", "Tall")
 
     def cost(self) -> float:
         return 0.99
@@ -78,8 +92,7 @@ class Decaf(Beverage):
     """
 
     def __init__(self):
-        self.description = "Café Descafeinado"
-        self.size = "Tall"
+        super().__init__("Café Descafeinado", "Tall")
 
     def cost(self) -> float:
         return 1.05
@@ -91,8 +104,7 @@ class Espresso(Beverage):
     """
 
     def __init__(self):
-        self.description = "Espresso"
-        self.size = "Tall"
+        super().__init__("Espresso", "Tall")
 
     def cost(self) -> float:
         return 1.99

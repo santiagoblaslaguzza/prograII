@@ -15,6 +15,11 @@ class Beverage(ABC):
         self.description = "Bebida Desconocida"
         self.size = "Tall"
 
+    def pretty_print(self)-> str:
+#        lista = self.get_description().split(",")
+#       texto = lista[0]
+        return self.description
+
     def get_description(self) -> str:
         """
         Devuelve la descripción de la bebida.

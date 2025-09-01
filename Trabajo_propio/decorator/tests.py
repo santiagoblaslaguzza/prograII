@@ -16,19 +16,24 @@ def test1():
         print("Cálculo correcto de costo")
     else:
         print("Debería costar 2.19")
+    print(f"Impresión decorada: {beverage_T1.pretty_print()}")  
     print("-----------------")
 
     # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20) y Crema (0.10).
     beverage_T1 = Espresso()
     beverage_T1 = Mocha(beverage_T1)  # Envolvemos con el primer Mocha
-    beverage_T1 = Whip(beverage_T1)  # Envolvemos con el primer Mocha
+    beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
+    beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
+    beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
+    beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
     print(
         f"Test 1: {beverage_T1.get_description()} ${beverage_T1.cost():.2f} Size: {beverage_T1.size}"
     )
-    if beverage_T1.cost() == 2.29:
+    if round(beverage_T1.cost(),2) == 2.59:
         print("Cálculo correcto de costo")
     else:
-        print("Debería costar 2.29")
+        print("Debería costar 2.59")
+    print(beverage_T1.pretty_print())
     print("-----------------")
 
 def test2():
@@ -43,6 +48,7 @@ def test2():
         print("Cálculo correcto de costo")
     else:
         print("Debería costar 2.19")
+    print(f"Impresión decorada: {beverage_T2.pretty_print()}")  
     print("-----------------")
 
 
@@ -58,6 +64,7 @@ def test3():
         print("Tamaño Correcto")
     else:
         print("Debería no haber modificado el default Tall")
+    print(f"Impresión decorada: {beverage_T3.pretty_print()}")  
     print("-----------------")
 
 
@@ -73,6 +80,7 @@ def test4():
         print("Costo Correcto")
     else:
         print("Debería costar 0.99")
+    print(f"Impresión decorada: {beverage_T4.pretty_print()}")  
     print("-----------------")
 
 
@@ -91,6 +99,7 @@ def test5():
         print("Costo Correcto")
     else:
         print("Debería costar 1.19")
+    print(f"Impresión decorada: {beverage_T5.pretty_print()}")  
     print("-----------------")
 
 
@@ -107,6 +116,7 @@ def test6():
         print("Costo Correcto")
     else:
         print("Debería costar 1.19")
+    print(f"Impresión decorada: {beverage_T6.pretty_print()}")  
     print("-----------------")
 
 
@@ -123,6 +133,7 @@ def test7():
         print("Costo Correcto")
     else:
         print("Debería costar 1.29")
+    print(f"Impresión decorada: {beverage_T7.pretty_print()}")  
     print("-----------------")
 
 
@@ -141,6 +152,7 @@ def test8():
         print("Costo Correcto")
     else:
         print("Debería costar 1.75")
+    print(f"Impresión decorada: {beverage_T8.pretty_print()}")  
     print("-----------------")
 
 
@@ -156,12 +168,13 @@ def test9():
         print("Costo Correcto")
     else:
         print("Debería costar 1.99")
+    print(f"Impresión decorada: {beverage_T9.pretty_print()}")  
     print("-----------------")
 
 
 def test10():
     # testeo builder sin condimentos
-    beverage4 = build_beverage("darkroast", "Venti", [])
+    beverage4 = build_beverage("DarkRoast", )
     print(
         f"Pedido build 10 : {beverage4.get_description()} ${beverage4.cost():.2f}  Size: {beverage4.size}"
     )
@@ -169,20 +182,26 @@ def test10():
         print("Costo Correcto")
     else:
         print("Debería costar 0.99")
+    print(f"Impresión decorada: {beverage4.pretty_print()}")  
     print("-----------------")
 
 
 def test11():
     # testeo builder con condimentos
-    beverage = build_beverage("decaf", "Venti", ["soy", "soy", "whip", "caramel"])
+    beverage = build_beverage("Decaf", "Venti", ["Soy", "Soy", "Whip", "Caramel"])
     print(
-        f"Pedido build 11: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
+        f"Pedido build 11: {beverage.get_description()}      ${beverage.cost():.2f}  Size: {beverage.size}"
     )
-    if round(beverage.cost(), 2) == 1.75:
+    assert round(beverage.cost(), 2) == 1.75
+    assert beverage.pretty_print() == "Café Descafeinado, Double  Soja,  Crema,  Caramelo"
+    #assert beverage.pretty_print() == "Café Descafeinado, Double  Soja,  Crema,  Caramelo  "
+    """     if round(beverage.cost(), 2) == 1.75:
         print("Costo Correcto")
     else:
         print("Debería costar 1.75")
-    print("-----------------")
+    print(f"Impresión decorada: {beverage.pretty_print()}")     """
+
+
     
 def test12():
     # testeo builder con condimentos
@@ -198,6 +217,7 @@ def test12():
     except ValueError as e:
         assert str(e) == "Esa bebida: decafEE no existe."
     print("-----------------")
+
 
 
 def tests():

@@ -15,6 +15,21 @@ class CondimentDecorator(Beverage, ABC):
         self._beverage = beverage
         self.size = beverage.get_size()
 
+    def pretty_print(self)-> str:
+        lista = self.get_description().split(",")
+        unicos= list(dict.fromkeys(lista[1:]))
+        texto = lista[0]
+        for i in unicos:
+            cant = lista.count(i)
+            if cant == 1:
+                texto= texto + ", "+ i
+            elif cant == 2:
+                texto= texto + ", Double "+i
+            elif cant == 3:
+                texto= texto + ", Triple "+i
+            else:
+                texto= texto + ", "+ str(cant)+"x"+i
+        return texto
 
     @abstractmethod
     def get_description(self) -> str:

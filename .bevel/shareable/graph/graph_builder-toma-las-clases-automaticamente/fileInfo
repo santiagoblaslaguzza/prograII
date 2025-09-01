@@ -58,10 +58,10 @@
   }, {
     "path" : "Trabajo_propio\\decorator\\beverages.py",
     "modificationInfo" : {
-      "contentHash" : -773670350,
-      "lastModified" : 1756680769090
+      "contentHash" : -825402480,
+      "lastModified" : 1756693594335
     },
-    "linesOfCode" : 93
+    "linesOfCode" : 105
   }, {
     "path" : "Trabajo_propio\\decorator\\builder.py",
     "modificationInfo" : {
@@ -72,15 +72,15 @@
   }, {
     "path" : "Trabajo_propio\\decorator\\condiments.py",
     "modificationInfo" : {
-      "contentHash" : 461405687,
-      "lastModified" : 1756680769090
+      "contentHash" : -136152940,
+      "lastModified" : 1756693502057
     },
-    "linesOfCode" : 80
+    "linesOfCode" : 92
   }, {
     "path" : "Trabajo_propio\\decorator\\main.py",
     "modificationInfo" : {
-      "contentHash" : -18166435,
-      "lastModified" : 1756691791210
+      "contentHash" : -450193737,
+      "lastModified" : 1756693679684
     },
     "linesOfCode" : 40
   }, {

@@ -21,7 +21,7 @@ def test1():
     # testeo el condimento caramelo Un Espresso simple (1.99), con caramelo (0.20) y Crema (0.10).
     beverage_T1 = Espresso()
     beverage_T1 = Mocha(beverage_T1)  # Envolvemos con el primer Mocha
-    beverage_T1 = Whip(beverage_T1)  # Envolvemos con el primer Mocha
+    beverage_T1 = Whip(beverage_T1)  # Envolvemos con Whip
     print(
         f"Test 1: {beverage_T1.get_description()} ${beverage_T1.cost():.2f} Size: {beverage_T1.size}"
     )
@@ -29,6 +29,7 @@ def test1():
         print("Cálculo correcto de costo")
     else:
         print("Debería costar 2.29")
+    print(beverage_T1.pretty_print())
     print("-----------------")
 
 def test2():
@@ -91,6 +92,7 @@ def test5():
         print("Costo Correcto")
     else:
         print("Debería costar 1.19")
+    print(beverage_T5.pretty_print())
     print("-----------------")
 
 
@@ -156,6 +158,7 @@ def test9():
         print("Costo Correcto")
     else:
         print("Debería costar 1.99")
+    print(beverage_T9.pretty_print())
     print("-----------------")
 
 
@@ -169,6 +172,7 @@ def test10():
         print("Costo Correcto")
     else:
         print("Debería costar 0.99")
+    print(beverage4.pretty_print())
     print("-----------------")
 
 
@@ -176,8 +180,9 @@ def test11():
     # testeo builder con condimentos
     beverage = build_beverage("Decaf", "Venti", ["Soy", "Soy", "Whip", "Caramel"])
     print(
-        f"Pedido build 11: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
+        f"Pedido build 11: {beverage.get_description()}      ${beverage.cost():.2f}  Size: {beverage.size}"
     )
+    print(beverage.pretty_print())
     if round(beverage.cost(), 2) == 1.75:
         print("Costo Correcto")
     else:

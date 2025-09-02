@@ -4,6 +4,7 @@
 from beverages import * # Espresso, DarkRoast, HouseBlend, Decaf
 from condiments import * # Mocha, Whip, Soy, Caramel
 import tests
+import pretty_print
 from builder import build_beverage
 
 

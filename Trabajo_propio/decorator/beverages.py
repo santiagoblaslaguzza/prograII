@@ -17,8 +17,8 @@ class Beverage(ABC):
         self.size = size
 
 
-    def pretty_print(self)-> str:
-        return self.description
+    """ def pretty_print(self)-> str:
+        return self.description """
 
     def get_description(self) -> str:
         """

@@ -4,7 +4,7 @@
 def impresion( description) -> str:
     #print(description)
     lista = description.split(", ")
-    print(lista)
+    #print(lista)
     unicos= list(dict.fromkeys(lista[1:]))
     texto = lista[0]
     for i in unicos:

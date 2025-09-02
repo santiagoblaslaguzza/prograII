@@ -32,7 +32,7 @@ def main():
     # Pedido 4: Un Decaf con Soja y Mocha.
     beverage4 = build_beverage("Decaf", "Grande", ["Soy", "Mocha"])
     print(f"Pedido 4: {beverage4.get_description()}    ${beverage4.cost():.2f}")
-
+    print("-----------------")
     tests.tests()
 
 

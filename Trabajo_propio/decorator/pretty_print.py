@@ -3,7 +3,8 @@
 
 def impresion( description) -> str:
     #print(description)
-    lista = description.split(",")
+    lista = description.split(", ")
+    print(lista)
     unicos= list(dict.fromkeys(lista[1:]))
     texto = lista[0]
     for i in unicos:
@@ -11,9 +12,9 @@ def impresion( description) -> str:
         if cant == 1:
             texto= texto + ", "+ i
         elif cant == 2:
-            texto= texto + ", Double"+i
+            texto= texto + ", Double "+i
         elif cant == 3:
-            texto= texto + ", Triple"+i
+            texto= texto + ", Triple "+i
         else:
-            texto= texto + ", "+ str(cant)+"x"+i
+            texto= texto + ", "+ str(cant)+"x "+i
     return texto 

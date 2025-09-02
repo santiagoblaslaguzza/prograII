@@ -1,5 +1,5 @@
-from beverages import Espresso, DarkRoast, HouseBlend, Decaf
-from condiments import Mocha, Whip, Soy, Caramel
+from beverages import *#Espresso, DarkRoast, HouseBlend, Decaf
+from condiments import *#Mocha, Whip, Soy, Caramel
 from builder import build_beverage
 from pretty_print import impresion
 
@@ -199,28 +199,43 @@ def test11():
         print("Debería costar 1.75")
 #    print(f"Impresión decorada: {beverage.pretty_print()}")
     print(f"Impresión decorada: {impresion(beverage.get_description())}") 
-
-
+    print("-----------------")    
     
 def test12():
-    # testeo builder con condimentos
+    # testeo builder con assert
+    print("test12")
     try:
-        beverage = build_beverage("decafEE", "Venti", ["soy", "soy", "whip", "caramel"])
-        print(
-            f"Pedido build 11: {beverage.get_description()} ${beverage.cost():.2f}  Size: {beverage.size}"
-        )
-        if round(beverage.cost(), 2) == 1.75:
-            print("Costo Correcto")
-        else:
-            print("Debería costar 1.75")
+        beverage = build_beverage("decafEE", "Venti", ["Soy", "Soy", "Whip", "Caramel"])
         print(f"Impresión decorada: {impresion(beverage.get_description())}") 
+    
     except ValueError as e:
+        print(e)
         assert str(e) == "Esa bebida: decafEE no existe."
     print("-----------------")
 
+def test13():
+    # testeo builder con condimentos se verifica que sea instancia de bebida y de condimento
+    try:
+        beverage = build_beverage("Decaf", "Venti", ["Soy", "Soy","Soy", "Whip", "Caramel"])
+        print(beverage.get_description())
+        print(f"beverage es instancia de Beverage= {isinstance(beverage,Beverage)}")
+        print(f"beverage es instancia de Condimentos= {isinstance(beverage,CondimentDecorator)}")        
+    except:
+        print("Error test 13")
+    print("-----------------")
 
+def test14():
+    # testeo builder sin condimentos se verifica que sea instancia de bebida y NO de condimento
+    try:
+        beverage = build_beverage("Decaf", "Venti")
+        print(beverage.get_description())
+        print(f"beverage es instancia de Beverage= {isinstance(beverage,Beverage)}")
+        print(f"beverage es instancia de Condimentos= {isinstance(beverage,CondimentDecorator)}")        
+    except:
+        print("Error test 14")
+    print("-----------------")
 
-def tests():
+def tests():     
     test1()
     test2()
     test3()
@@ -232,4 +247,6 @@ def tests():
     test9()
     test10()
     test11()
-    test12()
+    test12()    
+    test13()
+    test14()

@@ -116,7 +116,8 @@ Bienvenido a Starbuzz Coffee!
    https://github.com/Gianni2025/prograII/tree/builder-toma-las-clases-automaticamente/Trabajo_propio/decorator
 
 - Casos de prueba (mínimo 3).  
-   En main y tests.py
+   Primeros chequeos main y tests.py (Hasta el test 11 son funciones que chequean resultado, el test 12 usa assert)
+   En carpeta tests estan los tests realizados con pytest incluyendo un testing_guide.md para correrlos.
 
 - Un **breve informe** (puede ser en el README) explicando decisiones de diseño (cómo propagaste `size`, cómo probaste totales, etc.).
    Informe TP Decorador.md en mismo repositorio
@@ -125,8 +126,16 @@ Bienvenido a Starbuzz Coffee!
 ## 5) Buenas prácticas y “pitfalls”
 
 - **Programa contra la abstracción** (`Beverage`), no contra tipos concretos: si tu cliente chequea el tipo concreto de la bebida (p. ej., `isinstance(..., HouseBlend)`), al decorar se puede **romper** esa lógica. Evitalo. fileciteturn3file1  
-- **OCP**: para añadir un **nuevo condimento**, creá un **nuevo decorador**; **no** modifiques `Beverage` ni las bebidas existentes. fileciteturn3file1  
+
+   tests 13 y 14 del archivo tests.py verifica en un cafe decorado y no decorado si pertenecen a las clases bebidas/condimentos
+
+- **OCP**: para añadir un **nuevo condimento**, creá un **nuevo decorador**; **no** modifiques `Beverage` ni las bebidas existentes. 
+      Esto está hecho para Caramelo   #(O está pidiendo otra cosa)
 - **Pequeñas clases**: Decorator tiende a generar **muchas clases pequeñas**; documentá y organizá bien para mantener la comprensión. fileciteturn3file1
+   """
+    Decorador para añadir Caramelo a una bebida.
+   """
+   #Esto es suficiente???????
 
 ---
 

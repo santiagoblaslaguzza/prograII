@@ -26,6 +26,29 @@ class Beverage(ABC):
         """
         pass
 
+    def set_size(self, size: str):
+        """
+        Método para establecer el tamaño de la bebida.
+        """
+        if size not in ['P', 'M', 'G']:
+            raise ValueError("Tamaño inválido")
+        self.size = size
+
+    def get_size(self) -> str:
+        """
+        Método para obtener el tamaño de la bebida.
+        No implementado en esta versión, pero puede ser extendido.
+        """
+        return getattr(self, 'size', 'Tamaño no especificado')
+    
+    def get_size_cost(self) -> float:
+        """
+        Método para obtener el costo adicional basado en el tamaño.
+        No implementado en esta versión, pero puede ser extendido.
+        """
+        size_costs = {'P': 1, 'M': 1.10, 'G': 1.20}
+        return size_costs[self.size] if hasattr(self, 'size') else 1
+
 # --- Componentes Concretos ---
 class HouseBlend(Beverage):
     """

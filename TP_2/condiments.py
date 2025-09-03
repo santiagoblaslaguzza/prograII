@@ -47,7 +47,7 @@ class Soy(CondimentDecorator):
         return self._beverage.get_description() + ", Soja"
 
     def cost(self) -> float:
-        return self._beverage.cost() + 0.15
+        return self._beverage.cost() + (0.15 * self._beverage.get_size_cost())
 
 class Whip(CondimentDecorator):
     """

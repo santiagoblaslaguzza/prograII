@@ -16,7 +16,7 @@ El objetivo es que, al finalizar, puedas:
 
 ## 📖 Contexto del Problema: La Pizzería de Objectville
 
-[cite\_start]El código de este repositorio simula el sistema de `PizzaStore` [cite: 270][cite\_start], una pizzería que necesita gestionar diferentes tipos y estilos de pizza (por ejemplo, estilo Nueva York vs. estilo Chicago)[cite: 534, 545, 546]. [cite\_start]A medida que el negocio crece, el código original que usaba `if/else` para crear cada tipo de pizza se vuelve insostenible[cite: 361, 382].
+El código de este repositorio simula el sistema de `PizzaStore` , una pizzería que necesita gestionar diferentes tipos y estilos de pizza (por ejemplo, estilo Nueva York vs. estilo Chicago). A medida que el negocio crece, el código original que usaba `if/else` para crear cada tipo de pizza se vuelve insostenible.
 
 Tu tarea será explorar y extender las soluciones implementadas, que utilizan patrones de fábrica para hacer el sistema más flexible y mantenible.
 
@@ -27,8 +27,8 @@ Tu tarea será explorar y extender las soluciones implementadas, que utilizan pa
 El código está organizado en módulos que representan la evolución del diseño:
 
   * [cite\_start]`factory/simple_factory`: Una implementación básica que encapsula la creación de pizzas en una clase `SimplePizzaFactory`[cite: 2033]. [cite\_start]Aunque no es un patrón GoF formal, es un excelente punto de partida[cite: 2037].
-  * [cite\_start]`factory/factory_method`: Una evolución donde la responsabilidad de la creación se delega a subclases (`NYPizzaStore`, `ChicagoPizzaStore`) a través de un "método fábrica" abstracto[cite: 2051, 2055].
-  * [cite\_start]`factory/abstract_factory`: La solución más avanzada, que gestiona la creación de **familias de objetos relacionados** (ingredientes) para garantizar la consistencia regional[cite: 2080, 2084].
+  * [cite\_start]`factory/factory_method`: Una evolución donde la responsabilidad de la creación se delega a subclases (`NYPizzaStore`, `ChicagoPizzaStore`) a través de un "método fábrica" abstracto.
+  * [cite\_start]`factory/abstract_factory`: La solución más avanzada, que gestiona la creación de **familias de objetos relacionados** (ingredientes) para garantizar la consistencia regional.
 
 -----
 

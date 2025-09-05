@@ -26,9 +26,9 @@ Tu tarea será explorar y extender las soluciones implementadas, que utilizan pa
 
 El código está organizado en módulos que representan la evolución del diseño:
 
-  * [cite\_start]`factory/simple_factory`: Una implementación básica que encapsula la creación de pizzas en una clase `SimplePizzaFactory`[cite: 2033]. [cite\_start]Aunque no es un patrón GoF formal, es un excelente punto de partida[cite: 2037].
-  * [cite\_start]`factory/factory_method`: Una evolución donde la responsabilidad de la creación se delega a subclases (`NYPizzaStore`, `ChicagoPizzaStore`) a través de un "método fábrica" abstracto.
-  * [cite\_start]`factory/abstract_factory`: La solución más avanzada, que gestiona la creación de **familias de objetos relacionados** (ingredientes) para garantizar la consistencia regional.
+  * `factory/simple_factory`: Una implementación básica que encapsula la creación de pizzas en una clase `SimplePizzaFactory`[cite: 2033]. Aunque no es un patrón GoF formal, es un excelente punto de partida.
+  * `factory/factory_method`: Una evolución donde la responsabilidad de la creación se delega a subclases (`NYPizzaStore`, `ChicagoPizzaStore`) a través de un "método fábrica" abstracto.
+  * `factory/abstract_factory`: La solución más avanzada, que gestiona la creación de **familias de objetos relacionados** (ingredientes) para garantizar la consistencia regional.
 
 -----
 

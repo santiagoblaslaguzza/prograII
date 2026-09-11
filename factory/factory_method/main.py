@@ -2,8 +2,16 @@ from .store import NYPizzaStore, ChicagoPizzaStore
 
 def main():
     ny = NYPizzaStore(); chi = ChicagoPizzaStore()
-    p1 = ny.order_pizza("cheese"); print("Ethan ordered:", p1)
-    p2 = chi.order_pizza("cheese"); print("Joel ordered:", p2)
+
+    for kind in ["cheese", "veggie", "clam", "pepperoni"]:
+        p = ny.order_pizza(kind)
+        print("Ethan ordered:", p)
+        print()
+
+    for kind in ["cheese", "veggie", "clam", "pepperoni"]:
+        p = chi.order_pizza(kind)
+        print("Joel ordered:", p)
+        print()
 
 if __name__ == "__main__":
     main()
